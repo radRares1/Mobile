@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="descInput" type="id" />
+    <item name="typeInput" type="id" />
+    <item name="titleInput" type="id" />
+    <item name="ingredientsInput" type="id" />
+</resources>
