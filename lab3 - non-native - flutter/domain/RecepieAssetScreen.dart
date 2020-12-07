@@ -63,7 +63,9 @@ class RecepieAssetScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.purple,
         onPressed: () {
-          _navigateToEditScreen(context, recepie);
+
+            _navigateToEditScreen(context, recepie);
+
         },
         child: Icon(Icons.edit),
       ),
@@ -79,10 +81,10 @@ class RecepieAssetScreen extends StatelessWidget {
       MaterialPageRoute(builder: (context) => EditScreen(recepie,repo)),
     );
 
-    //   Scaffold.of(context).showSnackBar(SnackBar(content: Text(result.toString())));
-    //
-    // recepie = result as Recepie;
-    //
-    // (context as Element).reassemble();
+
+    recepie = result as Recepie;
+    //repo.editRecepie(recepie);
+
+    Navigator.pop(context,recepie);
   }
 }

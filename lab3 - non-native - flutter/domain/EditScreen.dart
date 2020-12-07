@@ -105,38 +105,8 @@ class EditScreen extends StatelessWidget {
                   var newRecepie = new Recepie(
                       this.recepie.id, title, type, ingredients, desc);
 
-                  Widget cancelButton = FlatButton(
-                    child: Text("Cancel"),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  );
-                  Widget continueButton = FlatButton(
-                      child: Text("Continue"),
-                      onPressed: () {
-                        repo.editRecepie(newRecepie);
-                        Navigator.push(
-                          context,
-                          // Create the SelectionScreen in the next step.
-                          MaterialPageRoute(
-                              builder: (context) => ListScreen(repo)),
-                        );
-                      });
-                  AlertDialog alert = AlertDialog(
-                    title: Text("You sure"),
-                    content: Text("Are you sure you want to edit?"),
-                    actions: [
-                      cancelButton,
-                      continueButton,
-                    ],
-                  );
-                  // show the dialog
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return alert;
-                    },
-                  );
+                  Navigator.pop(context,newRecepie);
+
                 },
                 child: Text(
                   'Edit',

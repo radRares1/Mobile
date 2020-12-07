@@ -101,10 +101,6 @@ class ListScreen extends StatelessWidget {
       MaterialPageRoute(builder: (context) => AddScreen()),
     );
 
-    // ScaffoldMessenger.of(context)
-    //   ..removeCurrentSnackBar()
-    //   ..showSnackBar(SnackBar(content: Text(result.toString())));
-
     repo.addRecepie(result as Recepie);
     (context as Element).reassemble();
   }
@@ -189,20 +185,28 @@ class _RandomWordsState extends State<RandomWords> {
         },
       ),
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => RecepieAssetScreen(pair, repo),
-        ));
+        setState(() {
+         _pushRecepie(pair, repo);
+        });
+
+
       },
     );
   }
 
-  // void _pushRecepie(Recepie pair) {
-  //   Navigator.of(context).push(
-  //     MaterialPageRoute(
-  //       builder: (context) => RecepieAssetScreen(pair),
-  //     ),
-  //     );
-  // }
+  Future<void> _pushRecepie(Recepie pair,InMemRepository repo) async {
+
+    final result = await Navigator.push(context,
+      MaterialPageRoute(
+        builder: (context) => RecepieAssetScreen(pair,repo),
+      ),
+      );
+
+    var recepie = result as Recepie;
+    repo.editRecepie(recepie);
+    (context as Element).reassemble();
+
+  }
 
   Widget _buildSuggestions() {
     return ListView.separated(
