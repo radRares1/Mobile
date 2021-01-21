@@ -1,0 +1,5 @@
+rootProject.name = 'lab10'
+include 'client'
+include 'web'
+include 'core'
+

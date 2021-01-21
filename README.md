@@ -5,3 +5,5 @@ lab1 - pdfs that represent how my app will look, done in  figma and a descriptio
 lab2 - native, same app done in kotlin</br>
 lab3 - non-native, same app done in flutter</br>
 lab4 - CRUD ops done on a local DB with sqflite in flutter</br>
+lab5 - CRUD ops done on a REST Services server & locally in a sqflite </br>
+exam - a template used for the exam, and the exam itself</br>
